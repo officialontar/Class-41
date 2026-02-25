@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block title %}All Jobs{% endblock %}
+
+{% block content %}
+
+<div class="max-w-6xl mx-auto mt-10 px-4">
+  <div class="bg-white shadow rounded-lg overflow-hidden">
+
+    <!-- Header -->
+    <div class="px-6 py-4 border-b bg-gray-50">
+      <h2 class="text-2xl font-bold text-gray-800 text-center">
+        All Jobs
+      </h2>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200">
+
+        <thead class="bg-gray-900 text-white text-base uppercase tracking-wider">
+          <tr>
+            <th class="px-6 py-4 text-left">Serial Number</th>
+            <th class="px-6 py-4 text-left">Job Title</th>
+            <th class="px-6 py-4 text-left">Logo</th>
+            <th class="px-6 py-4 text-left">Company</th>
+            <th class="px-6 py-4 text-left">Openings</th>
+            <th class="px-6 py-4 text-left">Category</th>
+
+            <!-- ✅ Actions column width fixed -->
+            <th class="px-6 py-4 text-center min-w-[240px]">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody class="bg-white divide-y divide-gray-200 text-lg">
+
+          {% for job in jobs %}
+          <tr class="hover:bg-gray-50 transition align-middle">
+
+            <td class="px-6 py-5">{{ forloop.counter }}</td>
+
+            <td class="px-6 py-5 font-semibold text-gray-900">
+              {{ job.job_title }}
+            </td>
+
+            <td class="px-6 py-5">
+              {% if job.company_logo %}
+                <img src="{{ job.company_logo.url }}"
+                     class="w-14 h-14 rounded-lg object-cover shadow">
+              {% endif %}
+            </td>
+
+            <td class="px-6 py-5 text-gray-700">
+              {{ job.company_name }}
+            </td>
+
+            <td class="px-6 py-5 text-gray-700">
+              {{ job.vacancies }}
+            </td>
+
+            <td class="px-6 py-5">
+              <span class="px-4 py-2 text-sm rounded-full bg-gray-100 text-gray-700">
+                {{ job.category }}
+              </span>
+            </td>
+
+            <!-- ✅ Actions: flex + nowrap (no wrapping) -->
+            <td class="px-6 py-5">
+              <div class="flex items-center justify-center gap-3 whitespace-nowrap">
+
+                <a href="#"
+                   class="inline-flex items-center justify-center px-5 py-2 text-sm font-medium bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
+                  View
+                </a>
+
+                <a href="#"
+                   class="inline-flex items-center justify-center px-5 py-2 text-sm font-medium bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition">
+                  Edit
+                </a>
+
+                <a href="#"
+                   class="inline-flex items-center justify-center px-5 py-2 text-sm font-medium bg-red-500 text-white rounded-md hover:bg-red-600 transition">
+                  Delete
+                </a>
+
+              </div>
+            </td>
+
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="7" class="px-6 py-8 text-center text-gray-500">
+              No Jobs Available
+            </td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

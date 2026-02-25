@@ -1,0 +1,150 @@
+{% extends 'base.html' %} {% block title %} Add Job - Job Portal {% endblock %}
+{% block content %}
+<main class="flex-grow pt-20 pb-10">
+  <div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-8">
+    <h2 class="text-2xl font-bold mb-6 text-center">Add New Job</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-5">
+      {% csrf_token %}
+
+      <!-- Job Title -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Job Title</label>
+        <input
+          type="text"
+          name="title"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          placeholder="Enter job title"
+        />
+      </div>
+
+      <!-- Company Name (NEW - 2nd position) -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Company Name</label>
+        <input
+          type="text"
+          name="company_name"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          placeholder="Enter company name"
+        />
+      </div>
+
+      <!-- Company Logo -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Company Logo</label>
+        <input
+          type="file"
+          name="company_logo"
+          class="w-full border border-gray-300 rounded-md px-3 py-2 bg-white"
+        />
+      </div>
+
+      <!-- Job Responsibilities -->
+      <div>
+        <label class="block text-sm font-medium mb-1"
+          >Job Responsibilities</label
+        >
+        <textarea
+          name="respons"
+          rows="3"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          placeholder="Enter job responsibilities"
+        ></textarea>
+      </div>
+
+      <!-- Required Educational Qualifications -->
+      <div>
+        <label class="block text-sm font-medium mb-1"
+          >Required Educational Qualifications</label
+        >
+        <textarea
+          name="education"
+          rows="3"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          placeholder="Enter required educational qualifications"
+        ></textarea>
+      </div>
+
+      <!-- Vacancies -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Vacancies</label>
+        <input
+          type="number"
+          name="vacancies"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          placeholder="Enter number of vacancies"
+        />
+      </div>
+
+      <!-- Category -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Category</label>
+        <select
+          name="category"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        >
+          <option value="">Select category</option>
+          <option value="Full Time">Full Time</option>
+          <option value="Part Time">Part Time</option>
+          <option value="Remote Job">Remote Job</option>
+        </select>
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Description</label>
+        <textarea
+          name="description"
+          rows="4"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          placeholder="Enter job description"
+        ></textarea>
+      </div>
+
+      <!-- Required Skills -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Required Skills</label>
+        <input
+          type="text"
+          name="skills"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          placeholder="e.g. Django, React, Communication"
+        />
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label class="block text-sm font-medium mb-1">Location</label>
+        <input
+          type="text"
+          name="location"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          placeholder="Enter job location"
+        />
+      </div>
+
+      <!-- Deadline -->
+      <div>
+        <label class="block text-sm font-medium mb-1"
+          >Application Deadline</label
+        >
+        <input
+          type="date"
+          name="deadline"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center pt-4">
+        <button
+          type="submit"
+          class="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition"
+        >
+          Submit Job
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
+{% endblock %}

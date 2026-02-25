@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %} Job Portal {% endblock %}</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    {% include 'includes/header.html' %}
+
+
+    {% if messages %}
+<div class="max-w-4xl mx-auto mt-20 px-4">
+  {% for message in messages %}
+    <div class="mb-4 px-4 py-3 rounded-md text-white
+      {% if message.tags == 'success' %}
+        bg-green-500
+      {% elif message.tags == 'error' %}
+        bg-red-500
+      {% elif message.tags == 'warning' %}
+        bg-yellow-500 text-black
+      {% else %}
+        bg-blue-500
+      {% endif %}
+    ">
+      {{ message }}
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+  
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    {% block content %}{% endblock %}
+  </main>
+
+{% include 'includes/footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- <nav class="bg-gray-900 fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+
+
+      <a href="#" class="text-white font-bold text-lg">
+        Job Portal
+      </a>
+
+      <div class="flex space-x-2">
+
+        <a href="{% url 'home' %}"
+           class="text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">
+          Home
+        </a>
+
+        <a href="#"
+           class="text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">
+          Add Job
+        </a>
+
+        <a href="#"
+           class="text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">
+          All Jobs
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</nav> -->
+
+
+<!-- ✅ Navbar (Always Fixed Top) -->
+<nav class="bg-gray-900 text-white fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <h1 class="font-bold text-lg">Job Portal</h1>
+
+      <div class="space-x-6">
+        <a href="{% url 'home' %}" class="px-3 py-2 rounded-md hover:bg-gray-700 transition">
+          Home
+        </a>
+        <a href="{% url 'add_job' %}" class="px-3 py-2 rounded-md hover:bg-gray-700 transition">
+          Add Job
+        </a>
+        <a href="{% url 'all_jobs' %}" class="px-3 py-2 rounded-md hover:bg-gray-700 transition">
+          All Jobs
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
