@@ -1,7 +1,20 @@
 # 🧑‍💼 Django Job Portal System
 
-A modern and responsive **Job Portal System** built with **Django** and **Tailwind CSS**.  
-This project demonstrates complete CRUD operations, dynamic job listing, search & sorting functionality with a clean UI structure.
+![Django](https://img.shields.io/badge/Django-4.x-green?logo=django)
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?logo=tailwind-css)
+![Status](https://img.shields.io/badge/Project-Completed-success)
+![License](https://img.shields.io/badge/License-Educational-blue)
+
+A modern and responsive **Job Portal System** built using **Django** and **Tailwind CSS**.  
+This project demonstrates full CRUD functionality, dynamic job browsing, search, and sorting system with clean UI design.
+
+---
+
+## 🌐 Live Demo
+
+🚀 _Coming Soon..._  
+(You can deploy this project on Render / Railway / PythonAnywhere)
 
 ---
 
@@ -13,19 +26,19 @@ This project demonstrates complete CRUD operations, dynamic job listing, search 
 ## ✨ Core Features
 
 ### ✅ Job Management (CRUD)
-- ✔ Add Job
-- ✔ Update Job Information
-- ✔ Delete Job
-- ✔ Upload Company Logo
-- ✔ View Single Job Details
+- ✔ Add Job  
+- ✔ Update Job Information  
+- ✔ Delete Job  
+- ✔ Upload Company Logo  
+- ✔ View Single Job Details  
 
 ### ✅ Job Listing System
-- ✔ Display All Jobs (Card View)
-- ✔ Display All Jobs (Table View)
+- ✔ Display All Jobs (Card View)  
+- ✔ Display All Jobs (Table View)  
 
 ### ✅ Smart Filtering & Sorting
-- ✔ Search Jobs (Title, Company, Category, Location)
-- ✔ Sorting Jobs (A → Z / Z → A by Job Title)
+- ✔ Search Jobs (Title, Company, Category, Location)  
+- ✔ Sorting Jobs (A → Z / Z → A by Job Title)  
 
 ---
 
@@ -35,6 +48,7 @@ This project demonstrates complete CRUD operations, dynamic job listing, search 
 - 🔹 Frontend: Tailwind CSS
 - 🔹 Database: SQLite
 - 🔹 Template Engine: Django Templates
+- 🔹 Version Control: Git & GitHub
 
 ---
 
@@ -69,6 +83,8 @@ This project demonstrates complete CRUD operations, dynamic job listing, search 
 git clone https://github.com/officialontar/Class-41.git
 cd Class-41
 ```
+
+---
 
 ### 2️⃣ Create Virtual Environment
 
@@ -119,7 +135,7 @@ Open in browser:
 
 ---
 
-## 📂 Recommended Project Structure
+## 📂 Recommended Folder Structure
 
 ```
 Job_Portal/
@@ -144,12 +160,12 @@ Job_Portal/
 
 This project helped practice:
 
-- CRUD Operations in Django
-- Template Rendering & Context Passing
-- File Upload Handling
-- Dynamic Search & Sorting
-- Responsive UI Design with Tailwind CSS
-- Git & GitHub Version Control
+- CRUD Operations in Django  
+- Template Rendering & Context Passing  
+- File Upload Handling  
+- Dynamic Search & Sorting  
+- Responsive UI Design with Tailwind CSS  
+- Git & GitHub Version Control  
 
 ---
 
@@ -157,7 +173,7 @@ This project helped practice:
 
 **MD. ANISUJJAMAN ONTAR**  
 Aspiring Full Stack Web Developer  
-GitHub: https://github.com/officialontar
+GitHub: https://github.com/officialontar  
 
 ---
 
