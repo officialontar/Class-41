@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %} Browse_Jobs - Job_Portal {% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto mt-14 px-6">
+
+  <h2 class="text-3xl font-bold text-center mb-10">
+    All Jobs
+  </h2>
+
+  <!-- Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    {% for job in jobs %}
+    <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition">
+
+      <!-- Logo -->
+      {% if job.company_logo %}
+      <img src="{{ job.company_logo.url }}"
+           class="w-14 h-14 rounded-lg object-cover mb-4">
+      {% endif %}
+
+      <!-- Title -->
+      <h3 class="text-lg font-semibold text-gray-900 mb-1">
+        {{ job.job_title }}
+      </h3>
+
+      <!-- Company -->
+      <p class="text-sm text-gray-600 mb-3">
+        {{ job.company_name }}
+      </p>
+
+      <!-- Category -->
+      <span class="inline-block px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full mb-3">
+        {{ job.category }}
+      </span>
+
+      <!-- Info -->
+      <div class="text-sm text-gray-700 mb-4 space-y-1">
+        <p><strong>Vacancies:</strong> {{ job. }}</p>
+        <p><strong>Location:</strong> {{ job.location }}</p>
+      </div>
+
+      <!-- Button -->
+      <a href="{% url 'signle_job_view' job.id %}"
+   class="block text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+  View Details
+</a>
+
+    </div>
+    {% empty %}
+    <p class="col-span-4 text-center text-gray-500">
+      No Jobs Available
+    </p>
+    {% endfor %}
+
+  </div>
+
+</div>
+{% endblock %}

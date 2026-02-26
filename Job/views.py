@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render, get_object_or_404
+from .models import Job
 from django.contrib import messages
 
-from .models import Job
 
 # Create your views here.
 
@@ -65,3 +65,27 @@ def all_jobs(request):
 
 
     return render(request, 'Jobs/all_jobs.html', context)
+
+
+
+def browse_jobs(request):
+
+    browse_jobs = Job.objects.all()
+
+    context = {
+        'jobs': browse_jobs
+    }
+
+
+    return render(request, 'Jobs/browse_jobs.html', context)
+
+
+
+def signle_job_view(request, job_id):
+    job_data = get_object_or_404(Job, id=job_id)
+
+    context = {
+        'job': job_data
+    }
+
+    return render(request, 'Jobs/signle_job_view.html', context)

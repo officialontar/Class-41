@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
 
-{% block title %}
-Home - Job Portal
-{% endblock %}
+{% block title %}Home - Job Portal{% endblock %}
 
 {% block content %}
 <section class="max-w-5xl mx-auto px-4 py-16 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">
-            Welcome to Job Portal
-        </h2>
-        <p class="text-gray-600 mb-8">
-            Find jobs easily and build your career with us.
-        </p>
+  <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Job Portal</h2>
 
-        <div class="space-x-4">
-            <button class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
-                Browse Jobs
-            </button>
-            <button class="bg-gray-300 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-400">
-                Post a Job
-            </button>
-        </div>
-    </section>
+  <p class="text-gray-600 mb-8">
+    Find jobs easily and build your career with us.
+  </p>
+
+  <div class="space-x-4">
+    <!-- Browse Jobs (Blue) + Hover -->
+    <a
+      href="{% url 'browse_jobs' %}"
+      class="bg-blue-600 text-white px-6 py-2 rounded-md transition duration-200
+             hover:bg-blue-700 hover:shadow-md hover:-translate-y-0.5"
+    >
+      Browse Jobs
+    </a>
+
+    <!-- Post a Job (Green) + Hover -->
+    <a
+      href="{% url 'add_job' %}"
+      class="bg-green-600 text-white px-6 py-2 rounded-md transition duration-200
+             hover:bg-green-700 hover:shadow-md hover:-translate-y-0.5"
+    >
+      Post a Job
+    </a>
+  </div>
+</section>
 {% endblock %}

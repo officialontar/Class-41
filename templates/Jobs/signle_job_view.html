@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ job.job_title }} - Job Portal 
+{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto mt-14 px-6">
+
+  <div class="bg-white rounded-2xl border border-gray-200 p-10">
+
+    <!-- Job Header -->
+    <div class="flex justify-between items-start mb-10">
+
+      <!-- Left Side -->
+      <div class="flex items-center gap-6">
+
+        {% if job.company_logo %}
+        <img src="{{ job.company_logo.url }}"
+             class="w-20 h-20 rounded-xl object-cover border border-gray-200">
+        {% endif %}
+
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">
+            {{ job.job_title }}
+          </h1>
+
+          <p class="text-lg text-gray-600 mt-1">
+            {{ job.company_name }}
+          </p>
+
+          <!-- Category moved here -->
+          <span class="inline-block mt-2 px-4 py-1 text-sm bg-gray-200 text-gray-800 rounded-full">
+            {{ job.category }}
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Right Side Dates -->
+      <div class="text-right space-y-3">
+        <div>
+          <p class="text-sm text-gray-500">Created Date</p>
+          <p class="text-base font-medium text-gray-800">
+            {{ job.created_at|date:"F d, Y" }}
+          </p>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-500">Application Deadline</p>
+          <p class="text-base font-semibold text-red-600">
+            {{ job.deadline|date:"F d, Y" }}
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Info Grid -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+
+      <div class="bg-gray-50 p-6 rounded-xl">
+        <p class="text-sm text-gray-500 mb-1">Openings</p>
+        <p class="text-xl font-semibold text-gray-800">
+          {{ job.vacancies }} Positions
+        </p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl">
+        <p class="text-sm text-gray-500 mb-1">Location</p>
+        <p class="text-lg font-medium text-gray-800">
+          {{ job.location }}
+        </p>
+      </div>
+
+      <!-- Deadline shown here instead of category -->
+      <div class="bg-gray-50 p-6 rounded-xl">
+        <p class="text-sm text-gray-500 mb-1">Last Date to Apply</p>
+        <p class="text-lg font-semibold text-red-600">
+          {{ job.deadline|date:"F d, Y" }}
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Description -->
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-3 text-gray-900">
+        Job Description
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        {{ job.description }}
+      </p>
+    </div>
+
+    <!-- Responsibilities -->
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-3 text-gray-900">
+        Responsibilities
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        {{ job.respons }}
+      </p>
+    </div>
+
+    <!-- Education -->
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-3 text-gray-900">
+        Required Educational Qualifications
+      </h2>
+      <p class="text-gray-700 leading-relaxed">
+        {{ job.education }}
+      </p>
+    </div>
+
+    <!-- Skills -->
+    <div class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 text-gray-900">
+        Required Skills
+      </h2>
+      <p class="text-gray-700">
+        {{ job.skills }}
+      </p>
+    </div>
+
+    <!-- Bottom Buttons -->
+    <div class="flex justify-between items-center mt-10">
+
+      <!-- Back Button Updated -->
+      <a href="{% url 'all_jobs' %}"
+         class="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-400 hover:text-white transition">
+        ← Back
+      </a>
+
+      <!-- Apply Button Green -->
+      <a href="#"
+         class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition shadow-md">
+        Apply Now
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
