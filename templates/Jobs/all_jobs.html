@@ -14,17 +14,54 @@
     <div>
       <table class="w-full text-left">
 
-        <thead class="bg-[#1e293b] text-white text-sm font-semibold uppercase">
-          <tr>
-            <th class="px-4 py-6 text-center whitespace-nowrap">ID</th>
-            <th class="px-10 py-6 text-center whitespace-nowrap">Job Title</th>
-            <th class="px-10 py-6 text-center whitespace-nowrap">Logo</th>
-            <th class="px-10 py-6 whitespace-nowrap">Company</th>
-            <th class="px-4 py-6 text-center whitespace-nowrap">Vacancies</th>
-            <th class="px-10 py-6 whitespace-nowrap">Category</th>
-            <th class="px-10 py-6 text-center whitespace-nowrap">Actions</th>
-          </tr>
-        </thead>
+  <thead class="bg-[#1e293b] text-white text-sm font-semibold uppercase">
+    <tr>
+
+      <th class="px-4 py-6 text-center whitespace-nowrap">
+        ID
+      </th>
+
+      <!-- JOB TITLE WITH SORT -->
+     <th class="px-10 py-6 text-center whitespace-nowrap">
+  <div class="flex items-center justify-center gap-1">
+    <span>Job Title</span>
+
+    <a href="?sort=asc"
+       class="text-[10px] leading-none px-1 py-0.5 rounded bg-white/10 hover:bg-white/30 transition"
+       title="Sort A-Z">
+      ▲
+    </a>
+
+    <a href="?sort=desc"
+       class="text-[10px] leading-none px-1 py-0.5 rounded bg-white/10 hover:bg-white/30 transition"
+       title="Sort Z-A">
+      ▼
+    </a>
+  </div>
+</th>
+
+      <th class="px-10 py-6 text-center whitespace-nowrap">
+        Logo
+      </th>
+
+      <th class="px-10 py-6 whitespace-nowrap">
+        Company
+      </th>
+
+      <th class="px-4 py-6 text-center whitespace-nowrap">
+        Vacancies
+      </th>
+
+      <th class="px-10 py-6 whitespace-nowrap">
+        Category
+      </th>
+
+      <th class="px-10 py-6 text-center whitespace-nowrap">
+        Actions
+      </th>
+
+    </tr>
+  </thead>
 
         <tbody class="divide-y divide-gray-200 text-base">
           {% for job in jobs %}
@@ -73,13 +110,13 @@
                   View
                 </a>
 
-                <a href="#"
+                <a href="{% url 'edit_job' job.id %}"
                    class="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition">
                   <i class="fa-solid fa-pen-to-square text-xs"></i>
                   Edit
                 </a>
 
-                <a href="#"
+                <a href="{% url 'delete_job' job.id %}"
                    class="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium bg-red-500 text-white rounded-md hover:bg-red-600 transition">
                   <i class="fa-solid fa-trash text-xs"></i>
                   Delete

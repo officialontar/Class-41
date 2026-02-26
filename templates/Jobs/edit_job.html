@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+Update Job - Job Portal
+
+{% endblock %}
+
+{% block content %}
+<main class="flex-grow pt-24 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto bg-white rounded-2xl p-14 border border-gray-200">
+    <h2 class="text-4xl font-bold mb-12 text-center text-gray-800">
+      Update Job
+    </h2>
+
+    <form method="POST" enctype="multipart/form-data" 
+          class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {% csrf_token %}
+
+      <!-- Job Title -->
+      <div>
+        <label class="block text-lg font-semibold mb-2">Job Title</label>
+        <input type="text" name="title"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none"
+          placeholder="Enter job title" value="{{ job.job_title }}">
+      </div>
+
+      <!-- Company Name -->
+      <div>
+        <label class="block text-lg font-semibold mb-2">Company Name</label>
+        <input type="text" name="company_name"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none"
+          placeholder="Enter company name" value="{{ job.company_name }}">
+      </div>
+
+      <!-- Company Logo -->
+      <div>
+
+        {% if job.company_logo %}
+
+        <h6>Old Company_Logo</h6>
+        <img src="{{ job.company_logo.url }}" alt="Company_Logo" class="w-[60px]">
+
+        {% endif %}
+
+        <label class="block text-lg font-semibold mb-2">Company Logo</label>
+        <input type="file" name="company_logo"
+          class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white text-lg">
+      </div>
+
+      <!-- Vacancies -->
+      <div>
+        <label class="block text-lg font-semibold mb-2">Vacancies</label>
+        <input type="number" name="vacancies"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none"
+          placeholder="Enter number of vacancies" value="{{ job.vacancies }}">
+      </div>
+
+      <!-- Job Responsibilities -->
+      <div class="md:col-span-2">
+        <label class="block text-lg font-semibold mb-2">Job Responsibilities</label>
+        <textarea name="respons" rows="4"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none"
+          placeholder="Enter job responsibilities">{{ job.respons }}</textarea>
+      </div>
+
+      <!-- Required Educational Qualifications -->
+      <div class="md:col-span-2">
+        <label class="block text-lg font-semibold mb-2">
+          Required Educational Qualifications
+        </label>
+        <textarea name="education" rows="4"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none"
+          placeholder="Enter required educational qualifications">{{ job.education }}</textarea>
+      </div>
+
+      <!-- Category -->
+      <div>
+        <label class="block text-lg font-semibold mb-2">Category</label>
+        <select name="category"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none">
+
+        
+
+        
+
+        
+
+          <option value="">Select category</option>
+          
+          <option value="Full Time" {% if job.category == 'Full Time' %}
+            selected
+        {% endif %}>Full Time</option>
+          
+          <option value="Part Time" {% if job.category == 'Part Time' %}
+            selected
+        {% endif %} >Part Time</option>
+          <option value="Remote Job" {% if job.category == 'Remote Job' %}
+            selected
+        {% endif %} >Remote Job</option>
+        </select>
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label class="block text-lg font-semibold mb-2">Location</label>
+        <input type="text" name="location"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none"
+          placeholder="Enter job location" value="{{ job.location }}">
+      </div>
+
+      <!-- Required Skills -->
+      <div class="md:col-span-2">
+        <label class="block text-lg font-semibold mb-2">Required Skills</label>
+        <input type="text" name="skills"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none"
+          placeholder="e.g. Django, React, Communication" value="{{ job.skills }}">
+      </div>
+
+      <!-- Description -->
+      <div class="md:col-span-2">
+        <label class="block text-lg font-semibold mb-2">Description</label>
+        <textarea name="description" rows="5"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none"
+          placeholder="Enter job description">{{ job.description }}</textarea>
+      </div>
+
+      <!-- Deadline -->
+      <div>
+        <label class="block text-lg font-semibold mb-2">Application Deadline</label>
+        <input type="date" name="deadline"
+          class="w-full border border-gray-300 rounded-lg px-6 py-3 text-lg focus:ring-2 focus:ring-gray-700 focus:outline-none" value="{{ job.deadline|date:'Y-m-d' }}">
+      </div>
+
+      <!-- Empty column for balance -->
+      <div></div>
+
+      <!-- Submit -->
+      <div class="md:col-span-2 text-center pt-6">
+        <button type="submit"
+          class="bg-gray-900 hover:bg-green-700 text-white text-lg font-semibold px-12 py-4 rounded-xl hover:bg-gray-700 transition shadow-lg">
+          Submit Job
+        </button>
+      </div>
+
+    </form>
+  </div>
+</main>
+{% endblock %}
