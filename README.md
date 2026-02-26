@@ -1,82 +1,92 @@
-# 💼 Job Portal - Django Web Application
+# 🧑‍💼 Django Job Portal System
 
-A full-featured Job Portal web application built using Django.  
-This project allows users to browse job listings, add new jobs, and manage job data through a clean and structured interface.
-
----
-
-## 🚀 Features
-
-- ✅ Add New Job
-- ✅ View All Jobs
-- ✅ Homepage with Job Listings
-- ✅ Template Inheritance (Base Layout)
-- ✅ Reusable Header & Footer Components
-- ✅ Clean Project Structure
-- ✅ Django Admin Panel Support
-- ✅ SQLite Database Integration
+A modern and responsive **Job Portal System** built with **Django** and **Tailwind CSS**.  
+This project demonstrates complete CRUD operations, dynamic job listing, search & sorting functionality with a clean UI structure.
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Backend:** Django 6.x
-- **Frontend:** HTML5, CSS3
-- **Database:** SQLite3
-- **Version Control:** Git & GitHub
+## 🧠 Project Topic
+📚 Django Job Portal System
 
 ---
 
-## 📂 Project Structure
+## ✨ Core Features
 
-```
-Job_Portal/
-│
-├── Job/                # Django App
-├── Job_Portal/         # Project Settings
-├── templates/          # HTML Templates
-│   ├── Jobs/
-│   └── includes/
-├── manage.py
-├── requirements.txt
-└── .gitignore
-```
+### ✅ Job Management (CRUD)
+- ✔ Add Job
+- ✔ Update Job Information
+- ✔ Delete Job
+- ✔ Upload Company Logo
+- ✔ View Single Job Details
+
+### ✅ Job Listing System
+- ✔ Display All Jobs (Card View)
+- ✔ Display All Jobs (Table View)
+
+### ✅ Smart Filtering & Sorting
+- ✔ Search Jobs (Title, Company, Category, Location)
+- ✔ Sorting Jobs (A → Z / Z → A by Job Title)
 
 ---
 
-## ⚙️ Installation & Setup
+## 🚀 Technology Stack
 
-### 1️⃣ Clone the Repository
+- 🔹 Backend: Django (Python)
+- 🔹 Frontend: Tailwind CSS
+- 🔹 Database: SQLite
+- 🔹 Template Engine: Django Templates
 
+---
+
+## 📸 Project Screenshots
+
+> Create a folder named `screenshots/` in your project root and add your images there.
+
+### 🟦 Browse Jobs – Card View
+![Browse Jobs](screenshots/browse_jobs_card.png)
+
+### 🟩 Search & Not Found Message
+![Search Result](screenshots/search_not_found.png)
+
+### 🟨 All Jobs – Table View with Sorting
+![Table View](screenshots/all_jobs_table_sort.png)
+
+### 🟪 Add Job Page
+![Add Job](screenshots/add_job.png)
+
+### 🟧 Update Job (Auto-filled Data)
+![Update Job](screenshots/update_job.png)
+
+### 🟥 Single Job Details
+![Single Job](screenshots/single_job_view.png)
+
+---
+
+## ⚙️ Installation & Setup Guide
+
+### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/officialontar/Class-40.git
-cd Class-40
+git clone https://github.com/officialontar/Class-41.git
+cd Class-41
 ```
-
----
 
 ### 2️⃣ Create Virtual Environment
 
+#### 🔹 Windows
 ```bash
 python -m venv .venv
+.venv\Scripts\Activate.ps1
 ```
 
-#### Activate (Windows)
-
+#### 🔹 Mac/Linux
 ```bash
-.venv\Scripts\activate
-```
-
-#### Activate (Mac/Linux)
-
-```bash
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
 ---
 
 ### 3️⃣ Install Dependencies
-
 ```bash
 pip install -r requirements.txt
 ```
@@ -84,52 +94,73 @@ pip install -r requirements.txt
 ---
 
 ### 4️⃣ Apply Migrations
-
 ```bash
 python manage.py migrate
 ```
 
 ---
 
-### 5️⃣ Run the Server
-
-```bash
-python manage.py runserver
-```
-
-Visit:  
-👉 http://127.0.0.1:8000/
-
----
-
-## 🔐 Admin Panel
-
-To access Django Admin:
-
+### 5️⃣ Create Superuser (Admin Access)
 ```bash
 python manage.py createsuperuser
 ```
 
-Then visit:  
-👉 http://127.0.0.1:8000/admin/
+---
+
+### 6️⃣ Run Development Server
+```bash
+python manage.py runserver
+```
+
+Open in browser:
+
+- 🌐 Main App → http://127.0.0.1:8000/
+- 🔐 Admin Panel → http://127.0.0.1:8000/admin/
 
 ---
 
-## 🎯 Project Status
+## 📂 Recommended Project Structure
 
-🟢 Completed (Class-40 Django Project)
+```
+Job_Portal/
+│
+├── screenshots/
+│   ├── browse_jobs_card.png
+│   ├── search_not_found.png
+│   ├── all_jobs_table_sort.png
+│   ├── add_job.png
+│   ├── update_job.png
+│   └── single_job_view.png
+│
+├── templates/
+├── static/
+├── manage.py
+└── README.md
+```
+
+---
+
+## 🎯 Learning Outcome
+
+This project helped practice:
+
+- CRUD Operations in Django
+- Template Rendering & Context Passing
+- File Upload Handling
+- Dynamic Search & Sorting
+- Responsive UI Design with Tailwind CSS
+- Git & GitHub Version Control
 
 ---
 
 ## 👨‍💻 Author
 
 **MD. ANISUJJAMAN ONTAR**  
-Aspiring Full Stack Developer  
-
-🔗 GitHub: https://github.com/officialontar
+Aspiring Full Stack Web Developer  
+GitHub: https://github.com/officialontar
 
 ---
 
-## 📜 License
+## 📄 License
 
-This project is built for educational and portfolio purposes.
+This project is developed for **learning, practice, and portfolio purposes**.
